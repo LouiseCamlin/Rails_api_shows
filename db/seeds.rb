@@ -5,10 +5,12 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-
+Favourite.delete_all
+User.delete_all
 Show.delete_all
 
-Show.create({
+
+show1 = Show.create({
   title: "Archer",
   series: 8,
   description: "Adult animated spy sitcom",
@@ -16,10 +18,31 @@ Show.create({
   programmeID: "sploosh0"
   })
 
-Show.create({
+show2 = Show.create({
   title: "The Wire",
   series: 5,
   description: "American drama series",
   image: "placeholder.jpg",
-  programmeID: "omarcoming11"
+  programmeID: "omarcoming911"
   })
+
+show3 = Show.create({
+  title: "Steven Universe",
+  series: 5,
+  description: "Animated series about a young boy with crystal gem powers",
+  image: "placeholder.jpg",
+  programmeID: "RoseQuartz8"
+  })
+
+user1 = User.create({name: "Louise"})
+user2 = User.create({name: "Paddy"})
+
+Favourite.create({show: show1, user: user1})
+Favourite.create({show: show1, user: user2})
+Favourite.create({show: show2, user: user1})
+Favourite.create({show: show3, user: user1})
+
+
+
+
+
